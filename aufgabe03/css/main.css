@@ -207,7 +207,8 @@ body:hover .animation {
 }
 
 /*Eigene animation, die von:         links-oben      -->     rechts-oben     -->     rechts-unten        -->     links-unten     geht.*/
-/*FRAGE:    warum geht der Button über den Bildschirmrand, wenn man 100% übergibt??*/
+/*FRAGE:    warum geht der Button über den Bildschirmrand, wenn man 100% übergibt??
+*/
 @keyframes myanimation2 {
   0% {
     left: 0px;
@@ -230,7 +231,7 @@ body:hover .animation {
     top: 0px;
   }
 }
-/* line 74, ../sass/main.scss */
+/* line 75, ../sass/main.scss */
 .btn:hover {
   padding-left: 25px;
   padding-right: 25px;

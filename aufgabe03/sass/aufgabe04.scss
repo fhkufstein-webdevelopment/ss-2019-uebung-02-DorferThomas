@@ -1,0 +1,40 @@
+@import "compass/css3";
+
+/*AUFGABE 4:    Mixin erstellt das die Margin werte aut. übernimmt*/
+
+@mixin margin($values...){
+  @each $var in $values{
+    margin: #{$var}
+  }
+}
+
+@mixin breakpoint($width-values) {
+  @media(min-width: 990px) {
+    @content;
+    /*definition was hier so passiert*/
+    width:$width-values;
+    /*und weitere Dinge*/
+  }
+}
+
+body{
+  @include margin(5px);
+}
+nav{
+  @include margin(5px 10px);
+}
+header{
+  @include margin(5px 8px 10px);
+}
+footer{
+  @include margin(5px 8px 10px 14px);
+}
+
+/*Aufgabe 4 b:*/
+
+.mobileInvisible{
+  display:none;
+  @include breakpoint(990px) {
+    display: block;
+  }
+}

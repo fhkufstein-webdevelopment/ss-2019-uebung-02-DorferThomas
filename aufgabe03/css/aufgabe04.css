@@ -1,0 +1,35 @@
+@charset "UTF-8";
+/*AUFGABE 4:    Mixin erstellt das die Margin werte aut. ├╝bernimmt*/
+/* line 20, ../sass/aufgabe04.scss */
+body {
+  margin: 5px;
+}
+
+/* line 23, ../sass/aufgabe04.scss */
+nav {
+  margin: 5px 10px;
+}
+
+/* line 26, ../sass/aufgabe04.scss */
+header {
+  margin: 5px 8px 10px;
+}
+
+/* line 29, ../sass/aufgabe04.scss */
+footer {
+  margin: 5px 8px 10px 14px;
+}
+
+/* line 32, ../sass/aufgabe04.scss */
+.mobileInvisible {
+  display: none;
+}
+@media (min-width: 990px) {
+  /* line 32, ../sass/aufgabe04.scss */
+  .mobileInvisible {
+    display: block;
+    /*definition was hier so passiert*/
+    width: 990px;
+    /*und weitere Dinge*/
+  }
+}
