@@ -8,24 +8,39 @@
 @import "base"; /* inkludiert die Datei _base.scss */
 @import "button"; /* inkludiert die Datei _button.scss */
 
+/*Je höher die Duration desto länger dauert die gesamte Animation bis der Hoover-Effekt vollendet ist und je höher der
+Delay ist desto länger muss ich mit meiner Maus draufbleiben bis etwas passiert bzw. der Effekt eintritt*/
 
 .btn {
-    /* TODO */
+    transition-property: padding;
+    transition-duration: 500ms;
+    transition-delay: 0ms;
+    transition-timing-function: linear;
+
 
     &.ease-in {
-        /* TODO */
+        /*übergang mit mit langsamen start*/
+        transition-timing-function: step-start;
     }
 
     &.ease-out {
-        /* TODO */
+        /*übergang mit mit langsamen ende*/
+        transition-timing-function: step-end;
     }
 
     &.ease-in-out {
-        /* TODO */
+        /*übergang mit mit langsamen start &  ende*/
+        transition-timing-function: ease;
     }
 
     &.green {
-        /* TODO */
+        /*  all     -->     feld füllt sich mit farbe und wird zugleich größer
+            color   -->     feld ist sofort in der farbe und vergrößert
+            padding -->     feld wird langsam größer ist aber schon mit farbe gefüllt
+
+            bei allen 3 ändert sich die schrift-farbe von schwarz-->weiß
+         */
+        transition-property: color;
     }
 
     &.animation {
@@ -38,9 +53,22 @@
     }
 }
 
+/*fährt man mit der Maus über den body, tritt der effekt ein.*/
 body:hover .animation {
     animation-name:myanimation2;
     animation-duration:5s;
+}
+
+/*Eigene animation, die von:         links-oben      -->     rechts-oben     -->     rechts-unten        -->     links-unten     geht.*/
+/*FRAGE:    warum geht der Button über den Bildschirmrand, wenn man 100% übergibt??
+*/
+@keyframes myanimation2 {
+    0%   { left:0px; top:0px;}
+    25%  { left:90%; top:0px;}
+    50%  { left:90%; top:90%;}
+    75%  { left:0px; top:90%;}
+    100% { left:0px; top:0px;}
+
 }
 
 

@@ -1,5 +1,5 @@
 @charset "UTF-8";
-/* line 5, ../../../../../../../../usr/local/lib/ruby/gems/2.4.0/gems/compass-core-1.0.3/stylesheets/compass/reset/_utilities.scss */
+/* line 5, ../../../../../../Ruby25-x64/lib/ruby/gems/2.5.0/gems/compass-core-1.0.3/stylesheets/compass/reset/_utilities.scss */
 html, body, div, span, applet, object, iframe,
 h1, h2, h3, h4, h5, h6, p, blockquote, pre,
 a, abbr, acronym, address, big, cite, code,
@@ -21,45 +21,45 @@ time, mark, audio, video {
   vertical-align: baseline;
 }
 
-/* line 22, ../../../../../../../../usr/local/lib/ruby/gems/2.4.0/gems/compass-core-1.0.3/stylesheets/compass/reset/_utilities.scss */
+/* line 22, ../../../../../../Ruby25-x64/lib/ruby/gems/2.5.0/gems/compass-core-1.0.3/stylesheets/compass/reset/_utilities.scss */
 html {
   line-height: 1;
 }
 
-/* line 24, ../../../../../../../../usr/local/lib/ruby/gems/2.4.0/gems/compass-core-1.0.3/stylesheets/compass/reset/_utilities.scss */
+/* line 24, ../../../../../../Ruby25-x64/lib/ruby/gems/2.5.0/gems/compass-core-1.0.3/stylesheets/compass/reset/_utilities.scss */
 ol, ul {
   list-style: none;
 }
 
-/* line 26, ../../../../../../../../usr/local/lib/ruby/gems/2.4.0/gems/compass-core-1.0.3/stylesheets/compass/reset/_utilities.scss */
+/* line 26, ../../../../../../Ruby25-x64/lib/ruby/gems/2.5.0/gems/compass-core-1.0.3/stylesheets/compass/reset/_utilities.scss */
 table {
   border-collapse: collapse;
   border-spacing: 0;
 }
 
-/* line 28, ../../../../../../../../usr/local/lib/ruby/gems/2.4.0/gems/compass-core-1.0.3/stylesheets/compass/reset/_utilities.scss */
+/* line 28, ../../../../../../Ruby25-x64/lib/ruby/gems/2.5.0/gems/compass-core-1.0.3/stylesheets/compass/reset/_utilities.scss */
 caption, th, td {
   text-align: left;
   font-weight: normal;
   vertical-align: middle;
 }
 
-/* line 30, ../../../../../../../../usr/local/lib/ruby/gems/2.4.0/gems/compass-core-1.0.3/stylesheets/compass/reset/_utilities.scss */
+/* line 30, ../../../../../../Ruby25-x64/lib/ruby/gems/2.5.0/gems/compass-core-1.0.3/stylesheets/compass/reset/_utilities.scss */
 q, blockquote {
   quotes: none;
 }
-/* line 103, ../../../../../../../../usr/local/lib/ruby/gems/2.4.0/gems/compass-core-1.0.3/stylesheets/compass/reset/_utilities.scss */
+/* line 103, ../../../../../../Ruby25-x64/lib/ruby/gems/2.5.0/gems/compass-core-1.0.3/stylesheets/compass/reset/_utilities.scss */
 q:before, q:after, blockquote:before, blockquote:after {
   content: "";
   content: none;
 }
 
-/* line 32, ../../../../../../../../usr/local/lib/ruby/gems/2.4.0/gems/compass-core-1.0.3/stylesheets/compass/reset/_utilities.scss */
+/* line 32, ../../../../../../Ruby25-x64/lib/ruby/gems/2.5.0/gems/compass-core-1.0.3/stylesheets/compass/reset/_utilities.scss */
 a img {
   border: none;
 }
 
-/* line 116, ../../../../../../../../usr/local/lib/ruby/gems/2.4.0/gems/compass-core-1.0.3/stylesheets/compass/reset/_utilities.scss */
+/* line 116, ../../../../../../Ruby25-x64/lib/ruby/gems/2.5.0/gems/compass-core-1.0.3/stylesheets/compass/reset/_utilities.scss */
 article, aside, details, figcaption, figure, footer, header, hgroup, main, menu, nav, section, summary {
   display: block;
 }
@@ -155,27 +155,41 @@ article, aside, details, figcaption, figure, footer, header, hgroup, main, menu,
 }
 
 /* inkludiert die Datei _button.scss */
-/* line 12, ../sass/main.scss */
+/*Je höher die Duration desto länger dauert die gesamte Animation bis der Hoover-Effekt vollendet ist und je höher der
+Delay ist desto länger muss ich mit meiner Maus draufbleiben bis etwas passiert bzw. der Effekt eintritt*/
+/* line 14, ../sass/main.scss */
 .btn {
-  /* TODO */
+  transition-property: padding;
+  transition-duration: 500ms;
+  transition-delay: 0ms;
+  transition-timing-function: linear;
 }
-/* line 15, ../sass/main.scss */
+/* line 21, ../sass/main.scss */
 .btn.ease-in {
-  /* TODO */
+  /*übergang mit mit langsamen start*/
+  transition-timing-function: step-start;
 }
-/* line 19, ../sass/main.scss */
+/* line 26, ../sass/main.scss */
 .btn.ease-out {
-  /* TODO */
-}
-/* line 23, ../sass/main.scss */
-.btn.ease-in-out {
-  /* TODO */
-}
-/* line 27, ../sass/main.scss */
-.btn.green {
-  /* TODO */
+  /*übergang mit mit langsamen ende*/
+  transition-timing-function: step-end;
 }
 /* line 31, ../sass/main.scss */
+.btn.ease-in-out {
+  /*übergang mit mit langsamen start &  ende*/
+  transition-timing-function: ease;
+}
+/* line 36, ../sass/main.scss */
+.btn.green {
+        /*  all     -->     feld füllt sich mit farbe und wird zugleich größer
+            color   -->     feld ist sofort in der farbe und vergrößert
+            padding -->     feld wird langsam größer ist aber schon mit farbe gefüllt
+
+            bei allen 3 ändert sich die schrift-farbe von schwarz-->weiß
+         */
+  transition-property: color;
+}
+/* line 46, ../sass/main.scss */
 .btn.animation {
   position: absolute;
   left: 0;
@@ -185,13 +199,38 @@ article, aside, details, figcaption, figure, footer, header, hgroup, main, menu,
   animation-timing-function: linear;
 }
 
-/* line 41, ../sass/main.scss */
+/*fährt man mit der Maus über den body, tritt der effekt ein.*/
+/* line 57, ../sass/main.scss */
 body:hover .animation {
   animation-name: myanimation2;
   animation-duration: 5s;
 }
 
-/* line 47, ../sass/main.scss */
+/*Eigene animation, die von:         links-oben      -->     rechts-oben     -->     rechts-unten        -->     links-unten     geht.*/
+/*FRAGE:    warum geht der Button über den Bildschirmrand, wenn man 100% übergibt??*/
+@keyframes myanimation2 {
+  0% {
+    left: 0px;
+    top: 0px;
+  }
+  25% {
+    left: 90%;
+    top: 0px;
+  }
+  50% {
+    left: 90%;
+    top: 90%;
+  }
+  75% {
+    left: 0px;
+    top: 90%;
+  }
+  100% {
+    left: 0px;
+    top: 0px;
+  }
+}
+/* line 74, ../sass/main.scss */
 .btn:hover {
   padding-left: 25px;
   padding-right: 25px;
